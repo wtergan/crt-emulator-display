@@ -1,0 +1,29 @@
+{
+  "name": "crt-emulator-overlay",
+  "version": "0.1.0",
+  "description": "Windows-first Samsung-style CRT shell for emulator overlays.",
+  "main": "dist/electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && electron dist/electron/main.cjs",
+    "start": "electron dist/electron/main.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "electron",
+    "emulator",
+    "crt",
+    "overlay"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^37.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "esbuild": "^0.25.9",
+    "typescript": "^5.9.2"
+  }
+}

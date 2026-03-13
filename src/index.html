@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRT Emulator Overlay</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="room-glow room-glow-left"></div>
+    <div class="room-glow room-glow-right"></div>
+
+    <main class="stage">
+      <section class="tv-shell">
+        <aside class="side-panel side-panel-left">
+          <div class="speaker speaker-large"></div>
+          <div class="speaker speaker-small"></div>
+        </aside>
+
+        <section class="tv-center">
+          <header class="tv-cap">
+            <span class="badge">Samsung-style CRT shell study</span>
+            <span class="status-lamp" id="status-lamp"></span>
+          </header>
+
+          <div class="crt-frame">
+            <div class="crt-shadow"></div>
+            <div class="crt-screen screen-off" id="crt-screen">
+              <div class="crt-bezel"></div>
+              <div class="screen-noise"></div>
+              <div class="screen-scanlines"></div>
+              <div class="screen-reflection"></div>
+
+              <div class="screen-content" id="screen-content">
+                <div class="channel-chip" id="channel-chip">CH 01</div>
+                <div class="screen-copy">
+                  <p class="eyebrow">Boot state</p>
+                  <h2 id="screen-title">TV off</h2>
+                  <p id="screen-description">
+                    This scaffold is ready for the launcher, ROM scan, and window placement layers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="osd hidden" id="menu-overlay">
+                <p class="osd-title">MENU</p>
+                <ul>
+                  <li>Library Browser</li>
+                  <li>Favorite Channels</li>
+                  <li>Display Settings</li>
+                  <li>Window Placement</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <footer class="control-deck">
+            <div class="brand-block">
+              <p class="brand-name">SAMSUNG</p>
+              <p class="brand-subtitle">CRT emulator overlay prototype</p>
+            </div>
+
+            <div class="button-row">
+              <button class="tv-button small" id="ch-down" type="button">CH -</button>
+              <button class="tv-button small" id="ch-up" type="button">CH +</button>
+              <button class="tv-button small" id="vol-down" type="button">VOL -</button>
+              <button class="tv-button small" id="vol-up" type="button">VOL +</button>
+              <button class="tv-button small" id="menu-toggle" type="button">MENU</button>
+              <button class="tv-button power" id="power-toggle" type="button">POWER</button>
+            </div>
+          </footer>
+        </section>
+
+        <aside class="side-panel side-panel-right">
+          <div class="speaker speaker-small"></div>
+          <div class="speaker speaker-large"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./renderer.ts"></script>
+  </body>
+</html>
+
