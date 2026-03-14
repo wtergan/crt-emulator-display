@@ -17,6 +17,7 @@ await esbuild.build({
   bundle: true,
   platform: "node",
   format: "cjs",
+  external: ["electron"],
   outfile: path.join(electronOutDir, "main.cjs")
 });
 
@@ -25,6 +26,7 @@ await esbuild.build({
   bundle: true,
   platform: "node",
   format: "cjs",
+  external: ["electron"],
   outfile: path.join(electronOutDir, "preload.cjs")
 });
 
@@ -41,4 +43,3 @@ const htmlTemplate = await readFile(htmlPath, "utf8");
 const htmlOutput = htmlTemplate.replace("./renderer.ts", "./renderer.js");
 await writeFile(path.join(distDir, "index.html"), htmlOutput, "utf8");
 await copyFile(path.join(root, "src", "styles.css"), path.join(distDir, "styles.css"));
-
